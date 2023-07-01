@@ -15,7 +15,7 @@ public class YangUtils {
      * (获取指定长度uuid)
      */
     public static String getUUID(int len) {
-        if (len <= 0) {
+        if (len <= 0 || len > 32) {
             return null;
         }
         String uuid = getUUID32();
