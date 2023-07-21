@@ -3,9 +3,6 @@ package com.yang.yangutils.utils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.util.Random;
 import java.util.UUID;
 
@@ -48,38 +45,38 @@ public class YangUtils {
         return stringBuilder.toString();
     }
 
-    /**
-     * QQ炸屏
-     */
-    public static void QQSenMsg(int num) {
-        try {
-            Robot robot = new Robot();
-            robot.delay(3000);
-            for (int i = 0; i < num; i++) {
-                Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("我是恋爱脑"), null);
-                robot.keyPress(KeyEvent.VK_CONTROL);
-                robot.keyPress(KeyEvent.VK_V);
-                robot.keyRelease(KeyEvent.VK_CONTROL);
-                robot.keyRelease(KeyEvent.VK_V);
-                robot.keyPress(KeyEvent.VK_ENTER);
-                robot.keyRelease(KeyEvent.VK_ENTER);
-                robot.delay(100);
-            }
-//                //无限炸，这个快
-//                while (true) {
-//                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("我是恋爱脑"), null);
-//                    robot.keyPress(KeyEvent.VK_CONTROL);
-//                    robot.keyPress(KeyEvent.VK_V);
-//                    robot.keyRelease(KeyEvent.VK_CONTROL);
-//                    robot.keyRelease(KeyEvent.VK_V);
-//                    robot.keyPress(KeyEvent.VK_ENTER);
-//                    robot.keyRelease(KeyEvent.VK_ENTER);
-//                    robot.delay(100);
-//                }
-        } catch (AWTException e) {
-            e.printStackTrace();
-        }
-    }
+//    /**
+//     * QQ炸屏
+//     */
+//    public static void QQSenMsg(int num) {
+//        try {
+//            Robot robot = new Robot();
+//            robot.delay(3000);
+//            for (int i = 0; i < num; i++) {
+//                Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("我是恋爱脑"), null);
+//                robot.keyPress(KeyEvent.VK_CONTROL);
+//                robot.keyPress(KeyEvent.VK_V);
+//                robot.keyRelease(KeyEvent.VK_CONTROL);
+//                robot.keyRelease(KeyEvent.VK_V);
+//                robot.keyPress(KeyEvent.VK_ENTER);
+//                robot.keyRelease(KeyEvent.VK_ENTER);
+//                robot.delay(100);
+//            }
+////                //无限炸，这个快
+////                while (true) {
+////                    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection("我是恋爱脑"), null);
+////                    robot.keyPress(KeyEvent.VK_CONTROL);
+////                    robot.keyPress(KeyEvent.VK_V);
+////                    robot.keyRelease(KeyEvent.VK_CONTROL);
+////                    robot.keyRelease(KeyEvent.VK_V);
+////                    robot.keyPress(KeyEvent.VK_ENTER);
+////                    robot.keyRelease(KeyEvent.VK_ENTER);
+////                    robot.delay(100);
+////                }
+//        } catch (AWTException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     @Test
     public void test() {
