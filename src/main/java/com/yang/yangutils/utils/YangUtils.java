@@ -1,12 +1,14 @@
 package com.yang.yangutils.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.Random;
 import java.util.UUID;
 
 @SuppressWarnings("all")
+@Slf4j
 public class YangUtils {
-
     public static String getUUID32() {
         return UUID.randomUUID().toString().replaceAll("-", "");
     }
@@ -27,48 +29,25 @@ public class YangUtils {
         return str.toString();
     }
 
+    /**
+     * 随机生成6位数字
+     */
+    public static String getCode() {
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < 6; i++) {
+            stringBuilder.append(random.nextInt(10));
+        }
+        String code = stringBuilder.toString();
+
+        log.info("==============验证码=" + code);
+
+        return stringBuilder.toString();
+    }
+    
     @Test
     public void test() {
-//        System.out.println("密码："+ com.credit.util.IDutils.getUUID(12));
-//        System.out.println("密码："+ com.credit.util.IDutils.getUUID(16));
-//        System.out.println("密码："+ com.credit.util.IDutils.getUUID(24));
+//        System.out.println(getCode());
     }
 
-//    public static Map queryPages(List<Notice> userList, int pages, int num) {
-//        Map<String, List> map = new HashMap<>();
-//        if (userList.size() > num) {
-//            List<Notice> listIn = new LinkedList<>();//用来存放分页后获取的数据
-//            int count = userList.size();//集合中数据总数量
-//            int totalPages;
-//            int total;
-//            if (count % num == 0) {
-//                totalPages = count / num;
-//            } else {
-//                total = count / num;
-//                totalPages = total + 1;
-//            }
-//            List<Integer> list2 = new LinkedList<>();
-//            list2.add(totalPages);
-//            map.put("totalPages", list2);
-//            int thePage = (pages - 1) * num;
-//            //使用listIn来存放分页查询数据
-//            for (int i = thePage; i < thePage + num && i < userList.size(); i++) {
-//                listIn.add(userList.get(i));
-//            }
-//            map.put("data", listIn);
-//            List<Integer> listCounts = new LinkedList<>();
-//            listCounts.add(userList.size());
-//            map.put("totals", listCounts);
-//            return map;
-//        } else {
-//            List<Integer> integerList = new LinkedList<>();
-//            integerList.add(userList.size());
-//            map.put("totals", integerList);
-//            map.put("data", userList);
-//            List<Integer> list2 = new LinkedList<>();
-//            list2.add(1);
-//            map.put("totalPages", list2);
-//            return map;
-//        }
-//    }
 }
