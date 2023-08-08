@@ -9,9 +9,4 @@ class YangUtilsApplicationTests {
     @Test
     void contextLoads() {
     }
-
-//    @Test
-//    void test01() {
-//        YangUtils.QQSenMsg(10);
-//    }
 }

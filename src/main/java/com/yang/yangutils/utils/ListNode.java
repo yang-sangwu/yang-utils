@@ -4,24 +4,36 @@ package com.yang.yangutils.utils;
  * @author a1002
  */
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     public ListNode(int val) {
         this.val = val;
     }
 
-    public ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
+    /**
+     * 打印链表里面的数据
+     */
+    public void display(ListNode head) {
+        ListNode cur = head;
+        while (cur != null) {
+            System.out.print(cur.val + "\t");
+            cur = cur.next;
+        }
     }
 
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
+    /**
+     * 双向链表的长度
+     * 长度@return
+     */
+    public int size(ListNode head) {
+        int count = 0;
+        ListNode cur = head;
+        while (cur != null) {
+            count++;
+            cur = cur.next;
+        }
+        return count;
     }
 }
 
